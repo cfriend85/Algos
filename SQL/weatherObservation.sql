@@ -16,3 +16,15 @@ Select distinct CITY from Station where RIGHT(CITY,1) in ('a','e','i','o','u');
 --Query the list of CITY names from STATION which have vowels (a,e,i,o,u) as both their first and last characters. Your result cannot contain duplicates.
 
 Select distinct CITY from Station where SUBSTRING(CITY,1,1) in ('a','e','i','o','u') and RIGHT(CITY,1) in ('a','e','i','o','u');
+
+--Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+
+Select distinct CITY from Station where SUBSTRING(CITY,1,1) not in ('a','e','i','o','u');
+
+--Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+
+Select distinct CITY from Station where RIGHT(CITY,1) not in ('a','e','i','o','u');
+
+--Query a list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+
+Select distinct CITY from Station where SUBSTRING(CITY,1,1) not in ('a','e','i','o','u') or RIGHT(CITY,1) not in ('a','e','i','o','u');
