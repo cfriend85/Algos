@@ -28,3 +28,15 @@ Select distinct CITY from Station where RIGHT(CITY,1) not in ('a','e','i','o','u
 --Query a list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
 
 Select distinct CITY from Station where SUBSTRING(CITY,1,1) not in ('a','e','i','o','u') or RIGHT(CITY,1) not in ('a','e','i','o','u');
+
+--Query a list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+Select distinct CITY from Station where SUBSTRING(CITY,1,1) not in ('a','e','i','o','u') and RIGHT(CITY,1) not in ('a','e','i','o','u');
+
+--Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than 38.7880 and less than 137.2345. Truncate your answer to 4 decimal places.
+
+Select ROUND(SUM(LAT_N),4) from STATION where LAT_N > 38.7880 and LAT_N < 137.2345;
+
+--Query the greatest value of the Northen Latitudes (LAT_N) from Station that is less than 137.2345. Truncate your answer to 4 decimal places.
+
+Select CAST(MAX(LAT_N) as decimal(10,4)) from Station where LAT_N < 137.2345; --casting number data type to decimal
