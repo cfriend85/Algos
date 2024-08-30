@@ -40,3 +40,7 @@ Select ROUND(SUM(LAT_N),4) from STATION where LAT_N > 38.7880 and LAT_N < 137.23
 --Query the greatest value of the Northen Latitudes (LAT_N) from Station that is less than 137.2345. Truncate your answer to 4 decimal places.
 
 Select CAST(MAX(LAT_N) as decimal(10,4)) from Station where LAT_N < 137.2345; --casting number data type to decimal
+
+--Query the Western Longitude (LONG_W) for the largest Northen Latitude (LAT_N) in Station that is less than 137.2345. Round your answer to 4 decimal places.
+
+Select CAST(LONG_W as decimal(10,4)) from Station where LAT_N = (Select MAX(LAT_N) from Station where LAT_N < 137.2345);
