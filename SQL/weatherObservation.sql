@@ -48,3 +48,7 @@ Select CAST(LONG_W as decimal(10,4)) from Station where LAT_N = (Select MAX(LAT_
 --Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780. Round your answer to 4 deimal places.
 
 Select CAST(MIN(LAT_N) as decimal(10,4)) from STATION where LAT_N > 38.7780;
+
+--Query the Western Longitude (LONG_W) where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to 4 decimal places.
+
+Select CAST(LONG_W as decimal(10,4)) from STATION where LAT_N = (Select MIN(LAT_N) from STATION where LAT_N > 38.7780);
